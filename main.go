@@ -24,7 +24,16 @@ func main(){
 		},
 	}
 
+	var versionCmd = &cobra.Command{
+		Use:   "version",
+		Short: "Print the CLI version",
+		Run: func(cmd *cobra.Command, args []string) {
+			fmt.Println("CLI Version: 1.0.0")
+		},
+	}
+
 	rootCmd.AddCommand(greetCmd)
+	rootCmd.AddCommand(versionCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
