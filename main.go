@@ -5,22 +5,26 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func main(){
+func main() {
 	rootCmd := &cobra.Command{
-		Use: "root",
+		Use:   "root",
 		Short: "A simple command-line tool",
-    	Long:  "MyCLI is a simple and powerful command-line tool built with Cobra.",
+		Long:  "MyCLI is a simple and powerful command-line tool built with Cobra.",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Println("Hello! Welcome to My CLI 🚀")
 		},
 	}
 
 	greetCmd := &cobra.Command{
-		Use: "greet",
+		Use:   "greet",
 		Short: "Greet someone with a friendly message",
 		Long:  "The greet command takes a name and prints a welcome message.",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Welcome 🚀", args[0])
+			name := "Guest"
+			if len(args) > 0 {
+				name = args[0]
+			}
+			fmt.Println("Welcome 🚀", name)
 		},
 	}
 
