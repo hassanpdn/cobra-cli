@@ -11,7 +11,7 @@ func main(){
 		Short: "A simple CLI tool",
 		Long:  "This is a simple command-line tool built with Cobra.",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Welcome Hassan! 🚀")
+			fmt.Println("Hello! Welcome to My CLI 🚀")
 		},
 	}
 
