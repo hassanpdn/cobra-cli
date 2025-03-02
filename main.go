@@ -1,9 +1,14 @@
 package main
 
 import (
-	"cobra-cli/cmd"
+	"fmt"
+	"cobra-cli/cmd/greeter/root"
 )
 
 func main() {
-	cmd.Execute()
+	rootCmd := root.RootCommand()
+
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+	}
 }
